@@ -13,10 +13,11 @@ public class Product {
 	public Product(int id, String name, double price, String date) {
 
 		this.setProductID(id);
-		
 		this.setProductName(name);
 		this.setProductPrice(price);
-		this.setExpirationDate(date);	
+		this.setExpirationDate(date);
+		
+		
 		
 	}
 	
@@ -27,7 +28,7 @@ public class Product {
 				   "\nProduct Name : " + this.getProductName() +
 				   "\nProduct price : " + this.getProductPrice() +
 				   "\nExpiration date : " + this.getExpirationDate() + "\n");
-		
+		builder.append("\n");
 		return builder.toString();
 	}
 

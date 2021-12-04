@@ -1,31 +1,29 @@
-INFO: ALL: 
-User ID : 1
-Name : DNS
-class user.Repository
-addProduct
-Sat Dec 04 11:02:31 CET 2021INFO: ALL: 
-User ID : 1
-Name : DNS
-class user.Repository
-addProduct
-Sat Dec 04 11:02:31 CET 2021INFO: ALL: 
-User ID : 1
-Name : DNS
-class user.Repository
-addProduct
-Sat Dec 04 11:02:31 CET 2021INFO: ALL: 
-User ID : 1
-Name : DNS
-class user.Repository
-addProduct
-Sat Dec 04 11:02:31 CET 2021INFO: ALL: 
-User ID : 1
-Name : DNS
-class user.Repository
-addProduct
-Sat Dec 04 11:02:31 CET 2021INFO: ALL: 
-User ID : 1
-Name : DNS
-class user.Repository
-addProduct
-Sat Dec 04 11:02:31 CET 2021
+
+{"who":{
+ "UserID":1,
+ "Name":"DNS"},
+"where":"class user.Repository",
+"what":"addProduct",
+"when":"Sat Dec 04 16:33:47 CET 2021"
+}
+{"who":{
+ "UserID":1,
+ "Name":"DNS"},
+"where":"class user.Repository",
+"what":"addProduct",
+"when":"Sat Dec 04 16:33:47 CET 2021"
+}
+{"who":{
+ "UserID":1,
+ "Name":"DNS"},
+"where":"class user.Repository",
+"what":"addProduct",
+"when":"Sat Dec 04 16:33:47 CET 2021"
+}
+{"who":{
+ "UserID":1,
+ "Name":"DNS"},
+"where":"class user.Repository",
+"what":"removeProduct",
+"when":"Sat Dec 04 16:33:47 CET 2021"
+}

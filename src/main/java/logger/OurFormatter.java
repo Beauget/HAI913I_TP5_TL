@@ -13,8 +13,7 @@ public class OurFormatter extends Formatter {
 
     @Override
     public String format(LogRecord record) {
-    	  return record.getLevel().toString() + ": "
-    		        + record.getMessage();
+    	  return record.getMessage();
     }
     	
     	

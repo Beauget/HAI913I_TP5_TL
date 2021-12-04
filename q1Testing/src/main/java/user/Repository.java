@@ -1,40 +1,16 @@
 package user;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.FileHandler;
-import java.util.logging.Handler;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
-
-import logger.Lps;
-import logger.OurFormatter;
 
 public class Repository {
 	
-	private static final Logger LOGGER = Logger.getLogger(Repository.class.getName());
-	
 	private ArrayList<Product> productList;
-	public static Handler ch;
-	public static FileHandler tx;
-	public static OurFormatter of;
-
-
-	public Repository() throws SecurityException, IOException {
+	
+	
+	
+	
+	public Repository() {
 		this.productList = new ArrayList<Product>();
-		
-		of = new OurFormatter();
-		ch = new ConsoleHandler();
-		tx =  new FileHandler("loggingRepository.json");
-		
-		ch.setFormatter(of);
-		tx.setFormatter(of);
-		
-		LOGGER.addHandler(ch);
-		LOGGER.addHandler(tx);
 	}
 	
 	
@@ -43,17 +19,7 @@ public class Repository {
 	 * @param p is added if no product with same id already exist
 	 * @throws ProductException
 	 */
-	public void addProduct(User u, Product p) throws ProductException {
-		
-		/**
-		 * manual logging part
-		 */
-		Lps lps = new Lps(u.toString(),this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"addProduct");		
-		LogRecord rec = new LogRecord(Level.ALL,lps.toString());
-		LOGGER.info(of.format(rec));
-		
-		
-		
+	public void addProduct(User u,Product p) throws ProductException {
 		Boolean dontAdd = false;
 		try {
 			for(Product pList : this.productList) {
@@ -77,11 +43,6 @@ public class Repository {
 	 * @throws ProductException
 	 */
 	public void removeProduct(User u,int ID) throws ProductException {
-		
-		Lps lps = new Lps(u.toString(),this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"removeProduct");
-		LogRecord rec = new LogRecord(Level.ALL,lps.toString());
-		LOGGER.info(of.format(rec));
-		
 		Boolean dontRemove = false;
 		try {
 			for(Product pList : this.productList) {
@@ -106,7 +67,7 @@ public class Repository {
 	 * @param p product to fetch if exist in our Repository
 	 * @throws ProductException
 	 */
-	public void fetchProduct(int ID) throws ProductException {
+	public void fetchProduct(User u,int ID) throws ProductException {
 		Boolean dontFetch = false;
 		try {
 			for(Product pList : this.productList) {
@@ -124,7 +85,7 @@ public class Repository {
 		}
 	}
 	
-	public void updateProduct(int ID,String name, double price, String date) throws ProductException {
+	public void updateProduct(User u,int ID,String name, double price, String date) throws ProductException {
 		Boolean dontUpdate = false;
 		try {
 			for(Product pList : this.productList) {

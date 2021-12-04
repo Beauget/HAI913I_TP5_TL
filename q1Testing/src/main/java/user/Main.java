@@ -1,6 +1,5 @@
 package user;
 
-import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
@@ -8,9 +7,7 @@ import java.util.logging.Logger;
 public class Main {
 	
 
-	public static void main(String args[]) throws ProductException, SecurityException, IOException {
-		
-	User testUser = new User("DNS", 23, "jetest@gmail.com", "unpassword");
+	public static void main(String args[]) throws ProductException {
 		
 	/**
 	 * Some testing content
@@ -20,16 +17,15 @@ public class Main {
 	Product p2 = new Product(2,"Chicken",6.50,"22/11/2021");
 	Product p3 = new Product(3,"Eggs",3.50,"25/11/2021");
 	Product p4 = new Product(3,"Eggs2",3.50,"25/11/2021");
-	ourRepo.addProduct(testUser,p1);
-	ourRepo.addProduct(testUser,p2);
-	ourRepo.addProduct(testUser,p3);
-	ourRepo.removeProduct(testUser, 3);
+	
 	
 	System.out.println(p1.toString());
 	
+	User testUser = new User("DNS", 23, "jetest@gmail.com", "unpassword");
 	
-	
-	
+	ourRepo.addProduct(testUser, p1);
+	ourRepo.addProduct(testUser, p2);
+	ourRepo.addProduct(testUser, p3);
 	System.out.println(testUser.toString());
 	
 	
@@ -60,7 +56,7 @@ public class Main {
 		case 2 : 
 			System.out.println("Give us the ID of the product you need to see");
 			int toFetch = sc.nextInt();
-			ourRepo.fetchProduct(toFetch);
+			ourRepo.fetchProduct(testUser, toFetch);
 			break;
 		case 3 :
 			System.out.println("For add a new product to our repository we need to know some info about your product");
@@ -74,12 +70,12 @@ public class Main {
 			String toDate = sc.next();
 			
 			Product toAdd = new Product(toID, toName,toPrice,toDate);
-			ourRepo.addProduct(testUser,toAdd);
+			ourRepo.addProduct(testUser, toAdd);
 			break;
 		case 4 : 
 			System.out.println("For delete a product you need to provide the ID of this product");
 			int toRemove = sc.nextInt();
-			ourRepo.removeProduct(testUser,toRemove);
+			ourRepo.removeProduct(testUser, toRemove);
 			break;
 		case 5 : 
 			System.out.println("For update a product you need to provide the ID of this product");
@@ -91,7 +87,7 @@ public class Main {
 			 toName = sc.next();
 			System.out.println("Expiration date of your product : ");
 			 toDate = sc.next();
-			ourRepo.updateProduct(toID, toName, toPrice, toDate);
+			ourRepo.updateProduct(testUser, toID, toName, toPrice, toDate);
 			break;
 		case 0 : 
 			System.out.println("Thanks for visit, have a good day !");

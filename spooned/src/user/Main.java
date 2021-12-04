@@ -1,7 +1,17 @@
 package user;
 public class Main {
+    private static final java.util.logging.Logger LOGGER = Logger.getLogger(Main.class.getName());
+
+    public static java.util.logging.FileHandler tx;
+
+    private java.io.IOException e1638619064779;
+
+    public static logger.OurFormatter of;
+
     public static void main(java.lang.String[] args) throws user.ProductException {
-        System.out.println("Enter in the method main from class Main");
+        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"main");
+        LogRecord rec = new LogRecord(Level.ALL,lps.toString());
+        LOGGER.info(of.format(rec));;
         /**
          * Some testing content
          */
@@ -10,11 +20,11 @@ public class Main {
         user.Product p2 = new user.Product(2, "Chicken", 6.5, "22/11/2021");
         user.Product p3 = new user.Product(3, "Eggs", 3.5, "25/11/2021");
         user.Product p4 = new user.Product(3, "Eggs2", 3.5, "25/11/2021");
-        ourRepo.addProduct(p1);
-        ourRepo.addProduct(p2);
-        ourRepo.addProduct(p3);
         java.lang.System.out.println(p1.toString());
         user.User testUser = new user.User("DNS", 23, "jetest@gmail.com", "unpassword");
+        ourRepo.addProduct(testUser, p1);
+        ourRepo.addProduct(testUser, p2);
+        ourRepo.addProduct(testUser, p3);
         java.lang.System.out.println(testUser.toString());
         java.lang.StringBuilder builder = new java.lang.StringBuilder();
         java.util.Scanner sc = new java.util.Scanner(java.lang.System.in);
@@ -36,7 +46,7 @@ public class Main {
                 case 2 :
                     java.lang.System.out.println("Give us the ID of the product you need to see");
                     int toFetch = sc.nextInt();
-                    ourRepo.fetchProduct(toFetch);
+                    ourRepo.fetchProduct(testUser, toFetch);
                     break;
                 case 3 :
                     java.lang.System.out.println("For add a new product to our repository we need to know some info about your product");
@@ -49,12 +59,12 @@ public class Main {
                     java.lang.System.out.println("Expiration date of your product : ");
                     java.lang.String toDate = sc.next();
                     user.Product toAdd = new user.Product(toID, toName, toPrice, toDate);
-                    ourRepo.addProduct(toAdd);
+                    ourRepo.addProduct(testUser, toAdd);
                     break;
                 case 4 :
                     java.lang.System.out.println("For delete a product you need to provide the ID of this product");
                     int toRemove = sc.nextInt();
-                    ourRepo.removeProduct(toRemove);
+                    ourRepo.removeProduct(testUser, toRemove);
                     break;
                 case 5 :
                     java.lang.System.out.println("For update a product you need to provide the ID of this product");
@@ -66,7 +76,7 @@ public class Main {
                     toName = sc.next();
                     java.lang.System.out.println("Expiration date of your product : ");
                     toDate = sc.next();
-                    ourRepo.updateProduct(toID, toName, toPrice, toDate);
+                    ourRepo.updateProduct(testUser, toID, toName, toPrice, toDate);
                     break;
                 case 0 :
                     java.lang.System.out.println("Thanks for visit, have a good day !");

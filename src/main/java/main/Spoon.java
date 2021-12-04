@@ -1,5 +1,5 @@
 package main;
-import Processor.OurProcessor;
+import Processor.*;
 import spoon.Launcher;
 
 public class Spoon {
@@ -10,8 +10,12 @@ public class Spoon {
 		ourLauncher.getEnvironment().setSourceClasspath(new String[] {
 		"C:\\Users\\beaug\\Desktop\\M2\\M2\\Evo-restru\\TP5\\HAI913I_TP5_TL\\q1Testing\\bin" });
 		ourLauncher.setBinaryOutputDirectory("C:\\Users\\beaug\\Desktop\\M2\\M2\\Evo-restru\\TP5\\HAI913I_TP5_TL\\spooned\\bin");
-		OurProcessor ourProcessor = new OurProcessor();
-		ourLauncher.addProcessor(ourProcessor);
+		FieldProcessor ourFieldProcessor = new FieldProcessor();
+		SetupProcessor ourSetupProcessor = new SetupProcessor();
+		LogProcessor ourLogProcessor = new LogProcessor();
+		ourLauncher.addProcessor(ourFieldProcessor);
+		ourLauncher.addProcessor(ourSetupProcessor);
+		ourLauncher.addProcessor(ourLogProcessor);
 		ourLauncher.run();
 	}
 	

@@ -15,6 +15,13 @@ public class Lps {
 		this.what = what;
 	}
 	
+	public Lps(String where, String when, String what) {
+		this.who = "No user parameter";
+		this.where = where;
+		this.when = when;
+		this.what = what;
+	}
+	
 	public String toString() {
 		StringBuilder res = new StringBuilder();
 		

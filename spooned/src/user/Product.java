@@ -1,5 +1,13 @@
 package user;
 public class Product {
+    private static final java.util.logging.Logger LOGGER = Logger.getLogger(Product.class.getName());
+
+    public static java.util.logging.FileHandler tx;
+
+    private java.io.IOException e1638619064779;
+
+    public static logger.OurFormatter of;
+
     private int productID;
 
     private double productPrice;
@@ -9,15 +17,23 @@ public class Product {
     private java.lang.String expirationDate;
 
     public Product(int id, java.lang.String name, double price, java.lang.String date) {
-        System.out.println("Enter in the method <init> from class Product");
+        ;
         this.setProductID(id);
         this.setProductName(name);
         this.setProductPrice(price);
         this.setExpirationDate(date);
+        of = new OurFormatter();
+        		tx =  new FileHandler("loggingRepository.json");
+        		
+        		tx.setFormatter(of);
+        		
+        		LOGGER.addHandler(tx);;
     }
 
     public java.lang.String toString() {
-        System.out.println("Enter in the method toString from class Product");
+        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"toString");
+        LogRecord rec = new LogRecord(Level.ALL,lps.toString());
+        LOGGER.info(of.format(rec));;
         java.lang.StringBuilder builder = new java.lang.StringBuilder();
         builder.append(((((((("Product with ID : " + this.getProductID()) + "\nProduct Name : ") + this.getProductName()) + "\nProduct price : ") + this.getProductPrice()) + "\nExpiration date : ") + this.getExpirationDate()) + "\n");
         builder.append("\n");
@@ -30,7 +46,9 @@ public class Product {
      * @return the productPrice
      */
     public double getProductPrice() {
-        System.out.println("Enter in the method getProductPrice from class Product");
+        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"getProductPrice");
+        LogRecord rec = new LogRecord(Level.ALL,lps.toString());
+        LOGGER.info(of.format(rec));;
         return productPrice;
     }
 
@@ -40,7 +58,9 @@ public class Product {
      * @return productPrice the productPrice to sert
      */
     public void setProductPrice(double productPrice) {
-        System.out.println("Enter in the method setProductPrice from class Product");
+        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"setProductPrice");
+        LogRecord rec = new LogRecord(Level.ALL,lps.toString());
+        LOGGER.info(of.format(rec));;
         this.productPrice = productPrice;
     }
 
@@ -50,7 +70,9 @@ public class Product {
      * @return the productName
      */
     public java.lang.String getProductName() {
-        System.out.println("Enter in the method getProductName from class Product");
+        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"getProductName");
+        LogRecord rec = new LogRecord(Level.ALL,lps.toString());
+        LOGGER.info(of.format(rec));;
         return productName;
     }
 
@@ -61,7 +83,9 @@ public class Product {
      * 		the productName to set
      */
     public void setProductName(java.lang.String productName) {
-        System.out.println("Enter in the method setProductName from class Product");
+        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"setProductName");
+        LogRecord rec = new LogRecord(Level.ALL,lps.toString());
+        LOGGER.info(of.format(rec));;
         this.productName = productName;
     }
 
@@ -71,7 +95,9 @@ public class Product {
      * @return the expirationDate
      */
     public java.lang.String getExpirationDate() {
-        System.out.println("Enter in the method getExpirationDate from class Product");
+        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"getExpirationDate");
+        LogRecord rec = new LogRecord(Level.ALL,lps.toString());
+        LOGGER.info(of.format(rec));;
         return expirationDate;
     }
 
@@ -82,7 +108,9 @@ public class Product {
      * 		the expirationDate to set
      */
     public void setExpirationDate(java.lang.String expirationDate) {
-        System.out.println("Enter in the method setExpirationDate from class Product");
+        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"setExpirationDate");
+        LogRecord rec = new LogRecord(Level.ALL,lps.toString());
+        LOGGER.info(of.format(rec));;
         this.expirationDate = expirationDate;
     }
 
@@ -92,7 +120,9 @@ public class Product {
      * @return the productID
      */
     public int getProductID() {
-        System.out.println("Enter in the method getProductID from class Product");
+        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"getProductID");
+        LogRecord rec = new LogRecord(Level.ALL,lps.toString());
+        LOGGER.info(of.format(rec));;
         return productID;
     }
 
@@ -102,7 +132,9 @@ public class Product {
      * @return productID the productID to set
      */
     public void setProductID(int productID) {
-        System.out.println("Enter in the method setProductID from class Product");
+        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"setProductID");
+        LogRecord rec = new LogRecord(Level.ALL,lps.toString());
+        LOGGER.info(of.format(rec));;
         this.productID = productID;
     }
 }

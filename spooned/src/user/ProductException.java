@@ -1,5 +1,13 @@
 package user;
 public class ProductException extends java.lang.Exception {
+    private static final java.util.logging.Logger LOGGER = Logger.getLogger(ProductException.class.getName());
+
+    public static java.util.logging.FileHandler tx;
+
+    private java.io.IOException e1638619064779;
+
+    public static logger.OurFormatter of;
+
     /**
      *
      */
@@ -7,6 +15,12 @@ public class ProductException extends java.lang.Exception {
 
     public ProductException(java.lang.String s) {
         super(s);
-        System.out.println("Enter in the method <init> from class ProductException");
+        ;
+        of = new OurFormatter();
+        		tx =  new FileHandler("loggingRepository.json");
+        		
+        		tx.setFormatter(of);
+        		
+        		LOGGER.addHandler(tx);;
     }
 }

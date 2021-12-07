@@ -25,6 +25,8 @@ public class Main {
 	ourRepo.addProduct(testUser,p3);
 	ourRepo.removeProduct(testUser, 3);
 	
+	ourRepo.fetchProductByPrice(3.50);
+	
 	System.out.println(p1.toString());
 	
 	

@@ -13,10 +13,10 @@ public class Main {
 	 * Some testing content
 	 */
 	Repository ourRepo = new Repository();
-	Product p1 = new Product(1,"Eggs",3.50,"25/11/2021");
-	Product p2 = new Product(2,"Chicken",6.50,"22/11/2021");
-	Product p3 = new Product(3,"Eggs",3.50,"25/11/2021");
-	Product p4 = new Product(3,"Eggs2",3.50,"25/11/2021");
+	Product p1 = new Product("1","Eggs",3.50,"25/11/2021");
+	Product p2 = new Product("2","Chicken",6.50,"22/11/2021");
+	Product p3 = new Product("3","Eggs",3.50,"25/11/2021");
+	Product p4 = new Product("3","Eggs2",3.50,"25/11/2021");
 	
 	
 	System.out.println(p1.toString());

@@ -35,6 +35,8 @@ public class Repository {
 		
 		LOGGER.addHandler(ch);
 		LOGGER.addHandler(tx);
+		
+		
 	}
 	
 	
@@ -82,16 +84,18 @@ public class Repository {
 		LogRecord rec = new LogRecord(Level.ALL,lps.toString());
 		LOGGER.info(of.format(rec));
 		
+		Product toRemove = null;
 		Boolean dontRemove = false;
 		try {
 			for(Product pList : this.productList) {
 				if(pList.getProductID() == ID) {
-					this.productList.remove(pList);
+					toRemove = pList;
 					dontRemove = true;
 					System.out.println("Product successfully removed !");
 				}
 				
 			}
+			this.productList.remove(toRemove);
 			if(!(dontRemove)) {
 				throw new ProductException("Sorry, No Product with this ID in our Repository we cant delete this Product");
 			}
@@ -118,6 +122,35 @@ public class Repository {
 			}
 			if(!(dontFetch)) {
 				throw new ProductException("Sorry, No Product with this ID in our Repository");
+			}
+		} catch (ProductException e) {
+			System.out.println(e);
+		}
+	}
+	
+	
+	/**
+	 * 
+	 * @param price
+	 * @throws ProductException
+	 */
+	public void fetchProductByPrice(double price) throws ProductException {
+		Lps lps = new Lps(this.getClass().toString() +"fetchProductByPrice",String.valueOf(new Date(System.currentTimeMillis())),String.valueOf(price));
+        LogRecord rec = new LogRecord(Level.ALL,lps.toString());
+        LOGGER.info(of.format(rec));
+        
+        
+		Boolean dontFetch = false;
+		try {
+			for(Product pList : this.productList) {
+				if(pList.getProductPrice() >= price) {
+					System.out.println("We found your product !\n");
+					System.out.println(pList.toString());
+					dontFetch = true;
+				}
+			}
+			if(!(dontFetch)) {
+				throw new ProductException("Sorry, There is no product above your given price in our Repository");
 			}
 		} catch (ProductException e) {
 			System.out.println(e);

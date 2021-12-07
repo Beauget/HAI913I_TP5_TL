@@ -42,7 +42,7 @@ public class Lps {
 		res.append("}");
 		res.append(",\n\"where\":" +'"'+ this.where+'"');
 		res.append(",\n\"what\":" +'"'+ this.what+'"');
-		res.append(",\n\"when\":" + '"'+this.when+'"'+"\n}");
+		res.append(",\n\"when\":" + '"'+this.when+'"'+"\n},");
 		
 		return res.toString();
 	}

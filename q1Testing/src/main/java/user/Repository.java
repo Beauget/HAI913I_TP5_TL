@@ -1,6 +1,11 @@
 package user;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+
+import logger.Lps;
 
 public class Repository {
 	
@@ -23,7 +28,7 @@ public class Repository {
 		Boolean dontAdd = false;
 		try {
 			for(Product pList : this.productList) {
-				if(pList.getProductID() == p.getProductID()) {
+				if(pList.getProductID().equals(p.getProductID())) {
 				dontAdd = true;
 				throw new ProductException("Sorry,Product with same ID already exist");
 				}			
@@ -42,24 +47,26 @@ public class Repository {
 	 * @param p product to remove 
 	 * @throws ProductException
 	 */
-	public void removeProduct(User u,int ID) throws ProductException {
-		Boolean dontRemove = false;
-		try {
-			for(Product pList : this.productList) {
-				if(pList.getProductID() == ID) {
-					this.productList.remove(pList);
-					dontRemove = true;
-					System.out.println("Product successfully removed !");
+	public void removeProduct(User u,String ID) throws ProductException {			
+			Product toRemove = null;
+			Boolean dontRemove = false;
+			try {
+				for(Product pList : this.productList) {
+					if(pList.getProductID().equals(ID)) {
+						toRemove = pList;
+						dontRemove = true;
+						System.out.println("Product successfully removed !");
+					}
+					
 				}
-				
+				this.productList.remove(toRemove);
+				if(!(dontRemove)) {
+					throw new ProductException("Sorry, No Product with this ID in our Repository we cant delete this Product");
+				}
+			} catch (ProductException e) {
+				System.out.println(e);
 			}
-			if(!(dontRemove)) {
-				throw new ProductException("Sorry, No Product with this ID in our Repository we cant delete this Product");
-			}
-		} catch (ProductException e) {
-			System.out.println(e);
 		}
-	}
 	
 	
 	/**
@@ -67,11 +74,11 @@ public class Repository {
 	 * @param p product to fetch if exist in our Repository
 	 * @throws ProductException
 	 */
-	public void fetchProduct(User u,int ID) throws ProductException {
+	public void fetchProduct(User u,String ID) throws ProductException {
 		Boolean dontFetch = false;
 		try {
 			for(Product pList : this.productList) {
-				if(pList.getProductID() == ID) {
+				if(pList.getProductID().equals(ID)) {
 					System.out.println("We found your product !\n");
 					System.out.println(pList.toString());
 					dontFetch = true;
@@ -85,11 +92,34 @@ public class Repository {
 		}
 	}
 	
-	public void updateProduct(User u,int ID,String name, double price, String date) throws ProductException {
+	/**
+	 * 
+	 * @param price
+	 * @throws ProductException
+	 */
+	public void fetchProductByPrice(double price) throws ProductException {
+		Boolean dontFetch = false;
+		try {
+			for(Product pList : this.productList) {
+				if(pList.getProductPrice() >= price) {
+					System.out.println("We found your product !\n");
+					System.out.println(pList.toString());
+					dontFetch = true;
+				}
+			}
+			if(!(dontFetch)) {
+				throw new ProductException("Sorry, There is no product above your given price in our Repository");
+			}
+		} catch (ProductException e) {
+			System.out.println(e);
+		}
+	}
+	
+	public void updateProduct(User u,String ID,String name, double price, String date) throws ProductException {
 		Boolean dontUpdate = false;
 		try {
 			for(Product pList : this.productList) {
-				if(pList.getProductID() == ID) {
+				if(pList.getProductID().equals(ID)) {
 					System.out.println("Before update : \n");
 					System.out.println(pList.toString());
 					pList.setProductName(name);

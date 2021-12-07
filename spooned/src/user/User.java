@@ -4,7 +4,7 @@ public class User {
 
     public static java.util.logging.FileHandler tx;
 
-    private java.io.IOException e1638627320667;
+    private java.io.IOException e1638870974572;
 
     public static logger.OurFormatter of;
 
@@ -37,7 +37,7 @@ public class User {
     }
 
     public java.lang.String toString() {
-        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"toString");
+        Lps lps = new Lps(this.getClass().toString() +".toString",String.valueOf(new Date(System.currentTimeMillis())),"no parameters");
         LogRecord rec = new LogRecord(Level.ALL,lps.toString());
         LOGGER.info(of.format(rec));;
         java.lang.StringBuilder builder = new java.lang.StringBuilder();
@@ -51,7 +51,7 @@ public class User {
      * @return the userID
      */
     public int getUserID() {
-        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"getUserID");
+        Lps lps = new Lps(this.getClass().toString() +".getUserID",String.valueOf(new Date(System.currentTimeMillis())),"no parameters");
         LogRecord rec = new LogRecord(Level.ALL,lps.toString());
         LOGGER.info(of.format(rec));;
         return userID;
@@ -63,7 +63,7 @@ public class User {
      * @return the name
      */
     public java.lang.String getName() {
-        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"getName");
+        Lps lps = new Lps(this.getClass().toString() +".getName",String.valueOf(new Date(System.currentTimeMillis())),"no parameters");
         LogRecord rec = new LogRecord(Level.ALL,lps.toString());
         LOGGER.info(of.format(rec));;
         return name;
@@ -76,7 +76,7 @@ public class User {
      * 		the name to set
      */
     public void setName(java.lang.String name) {
-        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"setName");
+        Lps lps = new Lps(this.getClass().toString() +".setName",String.valueOf(new Date(System.currentTimeMillis())),String.valueOf(name));
         LogRecord rec = new LogRecord(Level.ALL,lps.toString());
         LOGGER.info(of.format(rec));;
         this.name = name;
@@ -88,7 +88,7 @@ public class User {
      * @return the age
      */
     public int getAge() {
-        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"getAge");
+        Lps lps = new Lps(this.getClass().toString() +".getAge",String.valueOf(new Date(System.currentTimeMillis())),"no parameters");
         LogRecord rec = new LogRecord(Level.ALL,lps.toString());
         LOGGER.info(of.format(rec));;
         return age;
@@ -101,7 +101,7 @@ public class User {
      * 		the age to set
      */
     public void setAge(int age) {
-        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"setAge");
+        Lps lps = new Lps(this.getClass().toString() +".setAge",String.valueOf(new Date(System.currentTimeMillis())),String.valueOf(age));
         LogRecord rec = new LogRecord(Level.ALL,lps.toString());
         LOGGER.info(of.format(rec));;
         this.age = age;
@@ -113,7 +113,7 @@ public class User {
      * @return the email
      */
     public java.lang.String getEmail() {
-        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"getEmail");
+        Lps lps = new Lps(this.getClass().toString() +".getEmail",String.valueOf(new Date(System.currentTimeMillis())),"no parameters");
         LogRecord rec = new LogRecord(Level.ALL,lps.toString());
         LOGGER.info(of.format(rec));;
         return email;
@@ -126,7 +126,7 @@ public class User {
      * 		the email to set
      */
     public void setEmail(java.lang.String email) {
-        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"setEmail");
+        Lps lps = new Lps(this.getClass().toString() +".setEmail",String.valueOf(new Date(System.currentTimeMillis())),String.valueOf(email));
         LogRecord rec = new LogRecord(Level.ALL,lps.toString());
         LOGGER.info(of.format(rec));;
         this.email = email;
@@ -138,7 +138,7 @@ public class User {
      * @return the password
      */
     public java.lang.String getPassword() {
-        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"getPassword");
+        Lps lps = new Lps(this.getClass().toString() +".getPassword",String.valueOf(new Date(System.currentTimeMillis())),"no parameters");
         LogRecord rec = new LogRecord(Level.ALL,lps.toString());
         LOGGER.info(of.format(rec));;
         return password;
@@ -151,7 +151,7 @@ public class User {
      * 		the password to set
      */
     public void setPassword(java.lang.String password) {
-        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"setPassword");
+        Lps lps = new Lps(this.getClass().toString() +".setPassword",String.valueOf(new Date(System.currentTimeMillis())),String.valueOf(password));
         LogRecord rec = new LogRecord(Level.ALL,lps.toString());
         LOGGER.info(of.format(rec));;
         this.password = password;

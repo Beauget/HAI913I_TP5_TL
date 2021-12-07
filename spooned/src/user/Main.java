@@ -4,22 +4,22 @@ public class Main {
 
     public static java.util.logging.FileHandler tx;
 
-    private java.io.IOException e1638627320665;
+    private java.io.IOException e1638870974570;
 
     public static logger.OurFormatter of;
 
     public static void main(java.lang.String[] args) throws user.ProductException {
-        Lps lps = new Lps(this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"main");
+        Lps lps = new Lps(this.getClass().toString() +".main",String.valueOf(new Date(System.currentTimeMillis())),String.valueOf(args));
         LogRecord rec = new LogRecord(Level.ALL,lps.toString());
         LOGGER.info(of.format(rec));;
         /**
          * Some testing content
          */
         user.Repository ourRepo = new user.Repository();
-        user.Product p1 = new user.Product(1, "Eggs", 3.5, "25/11/2021");
-        user.Product p2 = new user.Product(2, "Chicken", 6.5, "22/11/2021");
-        user.Product p3 = new user.Product(3, "Eggs", 3.5, "25/11/2021");
-        user.Product p4 = new user.Product(3, "Eggs2", 3.5, "25/11/2021");
+        user.Product p1 = new user.Product("1", "Eggs", 3.5, "25/11/2021");
+        user.Product p2 = new user.Product("2", "Chicken", 6.5, "22/11/2021");
+        user.Product p3 = new user.Product("3", "Eggs", 3.5, "25/11/2021");
+        user.Product p4 = new user.Product("3", "Eggs2", 3.5, "25/11/2021");
         java.lang.System.out.println(p1.toString());
         user.User testUser = new user.User("DNS", 23, "jetest@gmail.com", "unpassword");
         ourRepo.addProduct(testUser, p1);

@@ -1,4 +1,4 @@
-package user;
+
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -94,10 +94,10 @@ public class Repository {
 	
 	/**
 	 * 
-	 * @param price
+	 * @param user
 	 * @throws ProductException
 	 */
-	public void fetchProductByPrice(double price) throws ProductException {
+	public void fetchProductByPrice(User u,double price) throws ProductException {
 		Boolean dontFetch = false;
 		try {
 			for(Product pList : this.productList) {

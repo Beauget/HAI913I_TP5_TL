@@ -82,6 +82,7 @@ public class FieldProcessor extends AbstractProcessor<CtClass<?>> {
 		element.addFieldAtTop(exceptionField);
 		element.addFieldAtTop(handlerField);
 		element.addFieldAtTop(loggerField);
+
 	}
 
 

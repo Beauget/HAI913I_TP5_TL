@@ -1,14 +1,26 @@
-package user;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.FileHandler;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
+
+import logger.Lps;
+import logger.OurFormatter;
+
 public class User {
     private static final java.util.logging.Logger LOGGER = Logger.getLogger(User.class.getName());
 
     public static java.util.logging.FileHandler tx;
 
-    private java.io.IOException e1638870974572;
+    private java.io.IOException e1638963177737;
 
     public static logger.OurFormatter of;
 
-    private static final java.util.concurrent.atomic.AtomicInteger counter = new java.util.concurrent.atomic.AtomicInteger(0);
+    public static final java.util.concurrent.atomic.AtomicInteger counter = new java.util.concurrent.atomic.AtomicInteger(0);
 
     private int userID;
 
@@ -21,19 +33,27 @@ public class User {
     private java.lang.String password;
 
     public User(java.lang.String name, int age, java.lang.String email, java.lang.String password) {
-        ;
+    	 of = new OurFormatter();
+         try {
+         	tx =  new FileHandler("loggingRepository.json");
+ 		} catch (SecurityException e) {
+ 		// TODO Auto-generated catch block
+ 					e.printStackTrace();
+ 		} catch (IOException e) {
+ 		// TODO Auto-generated catch block
+ 					e.printStackTrace();
+ 				}
+         		
+         tx.setFormatter(of);
+         		
+         LOGGER.addHandler(tx);;
         // auto-increment id
-        this.userID = user.User.counter.incrementAndGet();
+        this.userID = counter.incrementAndGet();
         this.setName(name);
         this.setAge(age);
         this.setEmail(email);
         this.setPassword(password);
-        of = new OurFormatter();
-        		tx =  new FileHandler("loggingRepository.json");
-        		
-        		tx.setFormatter(of);
-        		
-        		LOGGER.addHandler(tx);;
+         
     }
 
     public java.lang.String toString() {

@@ -1,11 +1,10 @@
-package user;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class User {
 	
 	
-	private static final AtomicInteger counter = new AtomicInteger(0);
+	public static final AtomicInteger counter = new AtomicInteger(0);
 	private int userID;
 	private String name;
 	private int age;

@@ -23,16 +23,24 @@ public class LogProcessor extends AbstractProcessor<CtExecutable<?>> {
 		StringBuilder logToAdd = new StringBuilder();
 		
 		List parameters = element.getParameters();
-		
 		if(!(imAConstructor(element))) {
+
+			
 			if(parameters.size() == 0) {
+
 				logToAdd.append("Lps lps = new Lps(this.getClass().toString() +" + "\"" + "." + element.getSimpleName() + "\"" + ",String.valueOf(new Date(System.currentTimeMillis()))," + "\"" + "no parameters" + "\");\r\n"
 						+ "LogRecord rec = new LogRecord(Level.ALL,lps.toString());\r\n"
 						+ "LOGGER.info(of.format(rec));");
+				
 			}
 			else if(parameters.size() == 2){
 					if(imAUserParameter(parameters.get(0)) && !(ImAProductParameter(parameters.get(1)))) {
-						logToAdd.append("Lps lps = new Lps(u.toString(),this.getClass().toString() +"  + "\"" + "." + element.getSimpleName() + "\"" + ",String.valueOf(new Date(System.currentTimeMillis())),ID);\r\n"
+						String toString = parameters.get(1).toString();
+						
+						String[] toAdd = toString.split(" ");
+						String output = toAdd[1];
+						
+						logToAdd.append("Lps lps = new Lps(u.toString(),this.getClass().toString() +"  + "\"" + "." + element.getSimpleName() + "\"" + ",String.valueOf(new Date(System.currentTimeMillis())),String.valueOf(" + output+"));\r\n"
 								+ "LogRecord rec = new LogRecord(Level.ALL,lps.toString());\r\n"
 								+ "LOGGER.info(of.format(rec));");
 					}
@@ -49,12 +57,20 @@ public class LogProcessor extends AbstractProcessor<CtExecutable<?>> {
 					}
 				}
 			else {
+				
 				if(imAUserParameter(parameters.get(0))) {
+					
 					logToAdd.append("Lps lps = new Lps(u.toString(),this.getClass().toString() +"  + "\""  + "." + element.getSimpleName() + "\"" + ",String.valueOf(new Date(System.currentTimeMillis())),ID);\r\n"
 							+ "LogRecord rec = new LogRecord(Level.ALL,lps.toString());\r\n"
 							+ "LOGGER.info(of.format(rec));");
 				}
+				
 				else {
+					if(element.getSimpleName().equals("main")) {
+						
+					}
+					else {
+					
 					String toString = parameters.get(0).toString();
 					
 					String[] toAdd = toString.split(" ");
@@ -62,6 +78,7 @@ public class LogProcessor extends AbstractProcessor<CtExecutable<?>> {
 					logToAdd.append("Lps lps = new Lps(this.getClass().toString() +"  + "\"" + "." + element.getSimpleName() + "\"" + ",String.valueOf(new Date(System.currentTimeMillis())),String.valueOf(" +  output+"));\r\n"
 							+ "LogRecord rec = new LogRecord(Level.ALL,lps.toString());\r\n"
 							+ "LOGGER.info(of.format(rec));");
+					}
 				}
 			}
 			}

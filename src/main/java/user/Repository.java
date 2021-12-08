@@ -53,8 +53,7 @@ public class Repository {
 		Lps lps = new Lps(u.toString(),this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"addProduct");		
 		LogRecord rec = new LogRecord(Level.ALL,lps.toString());
 		LOGGER.info(of.format(rec));
-		
-		
+
 		
 		Boolean dontAdd = false;
 		try {
@@ -78,7 +77,7 @@ public class Repository {
 	 * @param p product to remove 
 	 * @throws ProductException
 	 */
-	public void removeProduct(User u,int ID) throws ProductException {
+	public void removeProduct(User u,String ID) throws ProductException {
 		
 		Lps lps = new Lps(u.toString(),this.getClass().toString(),String.valueOf(new Date(System.currentTimeMillis())),"removeProduct");
 		LogRecord rec = new LogRecord(Level.ALL,lps.toString());
@@ -110,7 +109,7 @@ public class Repository {
 	 * @param p product to fetch if exist in our Repository
 	 * @throws ProductException
 	 */
-	public void fetchProduct(int ID) throws ProductException {
+	public void fetchProduct(User u,String ID) throws ProductException {
 		Boolean dontFetch = false;
 		try {
 			for(Product pList : this.productList) {
@@ -134,7 +133,7 @@ public class Repository {
 	 * @param price
 	 * @throws ProductException
 	 */
-	public void fetchProductByPrice(double price) throws ProductException {
+	public void fetchProductByPrice(User u,double price) throws ProductException {
 		Lps lps = new Lps(this.getClass().toString() +"fetchProductByPrice",String.valueOf(new Date(System.currentTimeMillis())),String.valueOf(price));
         LogRecord rec = new LogRecord(Level.ALL,lps.toString());
         LOGGER.info(of.format(rec));
@@ -157,7 +156,7 @@ public class Repository {
 		}
 	}
 	
-	public void updateProduct(int ID,String name, double price, String date) throws ProductException {
+	public void updateProduct(User u, String ID,String name, double price, String date) throws ProductException {
 		Boolean dontUpdate = false;
 		try {
 			for(Product pList : this.productList) {
@@ -205,5 +204,13 @@ public class Repository {
 		}
 		return builder.toString();
 	}
+
+
+
+
+
+	
+
+
 
 }

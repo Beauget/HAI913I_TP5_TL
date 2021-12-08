@@ -4,13 +4,13 @@ package user;
 
 public class Product {
 	
-	private int productID;
+	private String productID;
 	private double productPrice;
 	private String productName;
 	private String expirationDate;
 	
 	
-	public Product(int id, String name, double price, String date) {
+	public Product(String id, String name, double price, String date) {
 
 		this.setProductID(id);
 		this.setProductName(name);
@@ -27,7 +27,8 @@ public class Product {
 		builder.append("Product with ID : " + this.getProductID() + 
 				   "\nProduct Name : " + this.getProductName() +
 				   "\nProduct price : " + this.getProductPrice() +
-				   "\nExpiration date : " + this.getExpirationDate());
+				   "\nExpiration date : " + this.getExpirationDate() + "\n");
+		builder.append("\n");
 		return builder.toString();
 	}
 
@@ -85,14 +86,14 @@ public class Product {
 	/**
 	 * @return the productID
 	 */
-	public int getProductID() {
+	public String getProductID() {
 		return productID;
 	}
 	
 	/**
 	 * @return productID the productID to set
 	 */
-	public void setProductID(int productID) {
+	public void setProductID(String productID) {
 		this.productID = productID;
 	}
 	

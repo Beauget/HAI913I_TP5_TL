@@ -34,6 +34,7 @@ public class LogProcessor extends AbstractProcessor<CtExecutable<?>> {
 				
 			}
 			else if(parameters.size() == 2){
+			//	System.out.println(element.getSimpleName());
 					if(imAUserParameter(parameters.get(0)) && !(ImAProductParameter(parameters.get(1)))) {
 						String toString = parameters.get(1).toString();
 						
@@ -51,6 +52,7 @@ public class LogProcessor extends AbstractProcessor<CtExecutable<?>> {
 						
 					}
 					else {
+						
 						logToAdd.append("Lps lps = new Lps(this.getClass().toString() +"  + "\"" + "." + element.getSimpleName() + "\"" + ",String.valueOf(new Date(System.currentTimeMillis()))," + "\"" + element.getSimpleName() + "\"" +");\r\n"
 								+ "LogRecord rec = new LogRecord(Level.ALL,lps.toString());\r\n"
 								+ "LOGGER.info(of.format(rec));");
@@ -108,7 +110,7 @@ public class LogProcessor extends AbstractProcessor<CtExecutable<?>> {
 	}
 	
 	public boolean imAUserParameter(Object p) {
-			if(p.toString().equals("user.User u")) {
+			if(p.toString().equals("User u")) {
 				return true;
 			}
 			else {
@@ -117,7 +119,7 @@ public class LogProcessor extends AbstractProcessor<CtExecutable<?>> {
 	}
 	
 	public boolean ImAProductParameter(Object p) {
-		if(p.toString().equals("user.Product p")) {
+		if(p.toString().equals("Product p")) {
 			return true;
 		}
 		else {

@@ -3,37 +3,135 @@
 "who":{
  "UserID":1,
  "Name":"DNS"},
-"where":"class user.Repository",
-"what":"addProduct",
-"when":"Tue Dec 07 10:53:18 CET 2021"
+"where":"class Repository.addProduct",
+"what":"Product with ID : 1 Product Name : Eggs Product price : 3.5 Expiration date : 25/11/2021",
+"when":"Sat Dec 11 17:49:12 CET 2021"
 },
 {
 "who":{
  "UserID":1,
  "Name":"DNS"},
-"where":"class user.Repository",
-"what":"addProduct",
-"when":"Tue Dec 07 10:53:18 CET 2021"
+"where":"class Repository.addProduct",
+"what":"Product with ID : 2 Product Name : Chicken Product price : 6.5 Expiration date : 22/12/2021",
+"when":"Sat Dec 11 17:49:12 CET 2021"
 },
 {
 "who":{
- "UserID":1,
- "Name":"DNS"},
-"where":"class user.Repository",
-"what":"addProduct",
-"when":"Tue Dec 07 10:53:18 CET 2021"
+ "UserID":4,
+ "Name":"someThings"},
+"where":"class Repository.addProduct",
+"what":"Product with ID : 3 Product Name : Sausage Product price : 3.5 Expiration date : 25/12/2021",
+"when":"Sat Dec 11 17:49:12 CET 2021"
 },
 {
 "who":{
- "UserID":1,
- "Name":"DNS"},
-"where":"class user.Repository",
-"what":"removeProduct",
-"when":"Tue Dec 07 10:53:18 CET 2021"
+ "UserID":4,
+ "Name":"someThings"},
+"where":"class Repository.addProduct",
+"what":"Product with ID : 4 Product Name : Bacon Product price : 17.5 Expiration date : 25/12/2021",
+"when":"Sat Dec 11 17:49:12 CET 2021"
 },
 {
-"who":{"noData":"No user parameter"},
-"where":"class user.RepositoryfetchProductByPrice",
-"what":"3.5",
-"when":"Tue Dec 07 10:53:18 CET 2021"
+"who":{
+ "UserID":2,
+ "Name":"ToRich"},
+"where":"class Repository.addProduct",
+"what":"Product with ID : 5 Product Name : Chair Product price : 47.0 Expiration date : no expiration date",
+"when":"Sat Dec 11 17:49:12 CET 2021"
+},
+{
+"who":{
+ "UserID":2,
+ "Name":"ToRich"},
+"where":"class Repository.addProduct",
+"what":"Product with ID : 6 Product Name : Desk Product price : 717.0 Expiration date : no expiration date",
+"when":"Sat Dec 11 17:49:12 CET 2021"
+},
+{
+"who":{
+ "UserID":2,
+ "Name":"ToRich"},
+"where":"class Repository.addProduct",
+"what":"Product with ID : 7 Product Name : computer Product price : 1800.0 Expiration date : no expiration date",
+"when":"Sat Dec 11 17:49:12 CET 2021"
+},
+{
+"who":{
+ "UserID":3,
+ "Name":"tooMuch"},
+"where":"class Repository.addProduct",
+"what":"Product with ID : 8 Product Name : chocolate Product price : 1.5 Expiration date : 25/12/2022",
+"when":"Sat Dec 11 17:49:12 CET 2021"
+},
+{
+"who":{
+ "UserID":3,
+ "Name":"tooMuch"},
+"where":"class Repository.addProduct",
+"what":"Product with ID : 9 Product Name : Pasar Product price : 2.5 Expiration date : 25/12/2022",
+"when":"Sat Dec 11 17:49:12 CET 2021"
+},
+{
+"who":{
+ "UserID":3,
+ "Name":"tooMuch"},
+"where":"class Repository.addProduct",
+"what":"Product with ID : 10 Product Name : tablet Product price : 217.0 Expiration date : no expiration date",
+"when":"Sat Dec 11 17:49:12 CET 2021"
+},
+{
+"who":{
+ "UserID":3,
+ "Name":"tooMuch"},
+"where":"class Repository.removeProduct",
+"what":"9",
+"when":"Sat Dec 11 17:49:12 CET 2021"
+},
+{
+"who":{
+ "UserID":3,
+ "Name":"tooMuch"},
+"where":"class Repository.removeProduct",
+"what":"10",
+"when":"Sat Dec 11 17:49:12 CET 2021"
+},
+{
+"who":{
+ "UserID":3,
+ "Name":"tooMuch"},
+"where":"class Repository.addProduct",
+"what":"Product with ID : 10 Product Name : tablet Product price : 217.0 Expiration date : no expiration date",
+"when":"Sat Dec 11 17:49:12 CET 2021"
+},
+{
+"who":{
+ "UserID":3,
+ "Name":"tooMuch"},
+"where":"class Repository.addProduct",
+"what":"Product with ID : 9 Product Name : Pasar Product price : 2.5 Expiration date : 25/12/2022",
+"when":"Sat Dec 11 17:49:12 CET 2021"
+},
+{
+"who":{
+ "UserID":4,
+ "Name":"someThings"},
+"where":"class Repository.fetchProductByPrice",
+"what":"4.0",
+"when":"Sat Dec 11 17:49:12 CET 2021"
+},
+{
+"who":{
+ "UserID":2,
+ "Name":"ToRich"},
+"where":"class Repository.fetchProductByPrice",
+"what":"40.0",
+"when":"Sat Dec 11 17:49:12 CET 2021"
+},
+{
+"who":{
+ "UserID":4,
+ "Name":"someThings"},
+"where":"class Repository.fetchProduct",
+"what":"4",
+"when":"Sat Dec 11 17:49:12 CET 2021"
 },{}]

@@ -1,13 +1,18 @@
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import logger.OurFormatter;
 public class Main {
-    private static final java.util.logging.Logger LOGGER = Logger.getLogger(Main.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
 
-    public static java.util.logging.FileHandler tx;
+    public static FileHandler tx;
 
-    private java.io.IOException e1638964630217;
+    private IOException e1639241310013;
 
-    public static logger.OurFormatter of;
+    public static OurFormatter of;
 
-    public static void main(java.lang.String[] args) throws ProductException, java.lang.SecurityException, java.io.IOException {
+    public static void main(String[] args) throws ProductException, SecurityException, IOException {
         ;
         /**
          * Here start testing content for log generator.
@@ -18,7 +23,7 @@ public class Main {
         Repository ourRepo = new Repository();
         // Some product to test functionnality
         /**
-         * Scenario : 10 products and 4 user, some add product, remove and fectch to see some ouput logging
+         * Scenario : 10 products and 4 user, some add product, remove and fetch to see some output logging
          * before parse result
          */
         Product p1 = new Product("1", "Eggs", 3.5, "25/11/2021");
@@ -52,8 +57,8 @@ public class Main {
         ourRepo.fetchProductByPrice(someContent, 4);
         ourRepo.fetchProductByPrice(richUser, 40);
         ourRepo.fetchProduct(someContent, "4");
-        java.lang.StringBuilder builder = new java.lang.StringBuilder();
-        java.util.Scanner sc = new java.util.Scanner(java.lang.System.in);
+        StringBuilder builder = new StringBuilder();
+        Scanner sc = new Scanner(System.in);
         builder.append("\n1 : Display every product of our repository");
         builder.append("\n2 : Fetch a product by provided ID");
         builder.append("\n3 : Add a new product to our repository");
@@ -62,50 +67,50 @@ public class Main {
         builder.append("\n0 : To quit application");
         int cpt = 999;
         while (cpt != 0) {
-            java.lang.System.out.println(builder.toString());
+            System.out.println(builder.toString());
             cpt = sc.nextInt();
             switch (cpt) {
                 case 1 :
-                    java.lang.System.out.println("All product in our repository : \n");
-                    java.lang.System.out.println(ourRepo.showAllProduct());
+                    System.out.println("All product in our repository : \n");
+                    System.out.println(ourRepo.showAllProduct());
                     break;
                 case 2 :
-                    java.lang.System.out.println("Give us the ID of the product you need to see");
-                    java.lang.String toFetch = sc.next();
+                    System.out.println("Give us the ID of the product you need to see");
+                    String toFetch = sc.next();
                     ourRepo.fetchProduct(testUser, toFetch);
                     break;
                 case 3 :
-                    java.lang.System.out.println("For add a new product to our repository we need to know some info about your product");
-                    java.lang.System.out.println("ID of your product : \n");
-                    java.lang.String toID = sc.next();
-                    java.lang.System.out.println("Price of your product : ");
+                    System.out.println("For add a new product to our repository we need to know some info about your product");
+                    System.out.println("ID of your product : \n");
+                    String toID = sc.next();
+                    System.out.println("Price of your product : ");
                     int toPrice = sc.nextInt();
-                    java.lang.System.out.println("Name of your product : \n");
-                    java.lang.String toName = sc.next();
-                    java.lang.System.out.println("Expiration date of your product : ");
-                    java.lang.String toDate = sc.next();
+                    System.out.println("Name of your product : \n");
+                    String toName = sc.next();
+                    System.out.println("Expiration date of your product : ");
+                    String toDate = sc.next();
                     Product toAdd = new Product(toID, toName, toPrice, toDate);
                     ourRepo.addProduct(testUser, toAdd);
                     break;
                 case 4 :
-                    java.lang.System.out.println("For delete a product you need to provide the ID of this product");
-                    java.lang.String toRemove = sc.next();
+                    System.out.println("For delete a product you need to provide the ID of this product");
+                    String toRemove = sc.next();
                     ourRepo.removeProduct(testUser, toRemove);
                     break;
                 case 5 :
-                    java.lang.System.out.println("For update a product you need to provide the ID of this product");
-                    java.lang.System.out.println("ID of your product : \n");
-                    java.lang.String toIDup1 = sc.next();
-                    java.lang.System.out.println("Price of your product : ");
+                    System.out.println("For update a product you need to provide the ID of this product");
+                    System.out.println("ID of your product : \n");
+                    String toIDup1 = sc.next();
+                    System.out.println("Price of your product : ");
                     toPrice = sc.nextInt();
-                    java.lang.System.out.println("Name of your product : \n");
+                    System.out.println("Name of your product : \n");
                     toName = sc.next();
-                    java.lang.System.out.println("Expiration date of your product : ");
+                    System.out.println("Expiration date of your product : ");
                     toDate = sc.next();
                     ourRepo.updateProduct(testUser, toIDup1, toName, toPrice, toDate);
                     break;
                 case 0 :
-                    java.lang.System.out.println("Thanks for visit, have a good day !");
+                    System.out.println("Thanks for visit, have a good day !");
                     break;
             }
         } 

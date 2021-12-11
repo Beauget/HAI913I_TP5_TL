@@ -11,6 +11,8 @@ public class Spoon {
 		ourLauncher.getEnvironment().setSourceClasspath(new String[] {
 		"C:\\Users\\azent\\Desktop\\M2\\Evo-restru\\HAI913I_TP5_TL\\q1Testing\\bin" });
 		ourLauncher.setBinaryOutputDirectory("C:\\Users\\azent\\Desktop\\M2\\Evo-restru\\HAI913I_TP5_TL\\spooned\\bin");
+		ourLauncher.getEnvironment().setAutoImports(true);
+
 		
 		
 		/*

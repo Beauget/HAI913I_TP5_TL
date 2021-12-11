@@ -40,10 +40,9 @@ public class Product {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Product with ID : " + this.getProductID() + 
-				   "\nProduct Name : " + this.getProductName() +
-				   "\nProduct price : " + this.getProductPrice() +
-				   "\nExpiration date : " + this.getExpirationDate() + "\n");
-		builder.append("\n");
+				   " Product Name : " + this.getProductName() +
+				   " Product price : " + this.getProductPrice() +
+				   " Expiration date : " + this.getExpirationDate());
 		return builder.toString();
 	}
 

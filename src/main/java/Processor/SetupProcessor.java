@@ -31,7 +31,7 @@ public class SetupProcessor extends AbstractProcessor<CtConstructor<?>> {
 				+ "        		\r\n"
 				+ "        LOGGER.addHandler(tx);";
 		final CtCodeSnippetStatement constructorSnipper = getFactory().Code().createCodeSnippetStatement(constructor);
-		element.getBody().addStatement(constructorSnipper);
+		element.getBody().addStatement(1, constructorSnipper);
 		
 	}
 

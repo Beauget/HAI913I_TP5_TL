@@ -32,7 +32,7 @@ public class Main {
         Repository ourRepo = new Repository();
         // Some product to test functionnality
         /**
-         * Scenario : 10 products and 4 user, some add product, remove and fectch to see some ouput logging
+         * Scenario : 10 products and 4 user, some add product, remove and fetch to see some output logging
          * before parse result
          */
         Product p1 = new Product("1", "Eggs", 3.5, "25/11/2021");

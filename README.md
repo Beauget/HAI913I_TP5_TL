@@ -15,12 +15,13 @@
 # Extract of result
 
 ```json
-"who":{
- "UserID":1,
- "Name":"DNS"},
-"where":"class Repository.addProduct",
-"what":"Product with ID : 1 Product Name : Eggs Product price : 3.5 Expiration date : 25/11/2021",
-"when":"Sat Dec 11 17:49:12 CET 2021"
+"who": {
+    "UserID": 1,
+    "Name": "DNS"
+},
+"where": "class Repository.addProduct",
+"what": "Product with ID : 1 Product Name : Eggs Product price : 3.5 Expiration date : 25/11/2021",
+"when": "Sat Dec 11 17:49:12 CET 2021"
 }
 ```
 

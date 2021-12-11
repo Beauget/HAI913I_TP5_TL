@@ -9,7 +9,7 @@
 - Open "HAI913I_TP5_TL" as Maven Project with Java IDE like Eclipse
 - Run "Spoon.java" the project "q1Testing" will be instrumented by Spoon, you can view the result in "spooned" folder
 - Right click on "spooned/src" folder in Eclipse, Build Path -> Use as source folder
-- You can see instrumented project in your build path, resolver some import problem if needed
+- You can see instrumented project in your build path, resolve some import problem if needed
 - Lunch "Main.java", file "loggingRepository" will be generate, enjoy ! 
 
 # Extract of result
